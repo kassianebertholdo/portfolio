@@ -1,0 +1,393 @@
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #1a1a1a;
+        /* Fundo escuro */
+        color: #fff;
+        /* Cor do texto principal */
+    }
+    
+    header,
+    nav,
+    section {
+        padding: 20px;
+    }
+    
+    header {
+        background-color: #6a0dad;
+        color: white;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        /* Garante que o header fique acima de outros elementos */
+    }
+    
+    nav ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        gap: 15px;
+    }
+    
+    nav ul li {
+        margin: 0 15px;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .main-container {
+        height: 100vh;
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        padding-top: 100px;
+        /* Adiciona espaço suficiente para o header fixo */
+    }
+    
+    section {
+        height: calc(100vh - 100px);
+        /* Ajuste para compensar o espaço do header */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        scroll-snap-align: start;
+        overflow: hidden;
+        /* Evitar que o conteúdo extravase */
+        padding: 20px;
+        /* Adicionando espaço para o conteúdo */
+    }
+    
+    .container {
+        margin-top: 18%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .foto-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .minha-foto {
+        width: 10rem;
+        /* Ajuste o tamanho da foto se necessário */
+        height: auto;
+    }
+    
+    .frase {
+        font-size: 1.5rem;
+        /* Diminuir tamanho da fonte */
+        color: #f4f4f4;
+        padding: 1rem;
+        text-align: center;
+        white-space: pre-wrap;
+    }
+    
+    .frase-destaque {
+        font-size: 1.8rem;
+        /* Diminuir tamanho da fonte */
+        color: #6a0dad;
+        padding: 1rem;
+        text-align: center;
+    }
+    /* Remova as animações de escrita */
+    
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+    
+    @keyframes blink {
+        from,
+        to {
+            border-color: transparent;
+        }
+        50% {
+            border-color: transparent;
+        }
+    }
+    /* Animação para o efeito de piscar do cursor */
+    
+    @keyframes blink {
+        from,
+        to {
+            border-color: transparent;
+        }
+        50% {
+            border-color: #f4f4f4;
+        }
+    }
+    
+    .frase-destaque {
+        font-family: 'Roboto', sans-serif;
+        /* Fonte diferente para destaque */
+        font-size: 2rem;
+        color: #6a0dad;
+        /* Cor lilás para destaque */
+        padding: 1rem;
+        /* Espaço ao redor da frase para garantir visibilidade */
+        text-align: center;
+        /* Centraliza o texto */
+    }
+    /************************* HABILIDADES***************************/
+    
+    .habilidades__titulo {
+        font-size: 1.6rem;
+        /* Reduzir o tamanho da fonte */
+        margin-bottom: 20px;
+        color: #6a0dad;
+        text-align: center;
+    }
+    
+    .habilidades__lista {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        /* Reduzir o espaço entre os elementos da lista */
+        max-width: 1000px;
+        /* Limite de largura mais restrito */
+        margin: 0 auto;
+    }
+    
+    .habilidades__elemento {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #2a2a2a;
+        padding: 10px;
+        /* Reduzir o espaço interno */
+        border-radius: 10px;
+        width: 90px;
+        /* Reduzir a largura */
+        text-align: center;
+    }
+    
+    .habilidades__icone {
+        width: 45px;
+        /* Reduzir o tamanho do ícone */
+        height: auto;
+        margin-bottom: 5px;
+        /* Reduzir o espaço abaixo do ícone */
+    }
+    
+    .habilidades__nome {
+        font-size: 0.85rem;
+        /* Reduzir o tamanho da fonte */
+        color: #f4f4f4;
+    }
+    /************************* REDES SOCIAIS***************************/
+    
+    .redes {
+        list-style-type: none;
+        /* Remove as bolinhas da lista */
+        padding: 0;
+        /* Remove o padding padrão */
+    }
+    
+    .redes__elemento {
+        margin-bottom: 10px;
+        /* Adiciona espaço entre os itens da lista */
+    }
+    
+    .redes__elemento a {
+        color: #6a0dad;
+        /* Cor lilás para os links */
+        text-decoration: none;
+        /* Remove o sublinhado dos links */
+    }
+    
+    .redes__elemento a:hover {
+        text-decoration: underline;
+        /* Sublinhado ao passar o mouse */
+    }
+    /************************* FORMAÇÃO**************************/
+    
+    .formacao__titulo {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: #6a0dad;
+        /* Cor lilás */
+        text-align: center;
+        /* Centralizar título */
+    }
+    
+    .formacao__lista {
+        list-style-type: none;
+        /* Remove as bolinhas da lista */
+        padding: 0;
+    }
+    
+    .formacao__elemento {
+        margin-bottom: 20px;
+        /* Espaço entre os itens da lista */
+        display: flex;
+        align-items: flex-start;
+        /* Alinha itens no início */
+        background-color: #2a2a2a;
+        /* Fundo mais escuro */
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .formacao__elemento img {
+        margin-right: 15px;
+        /* Espaçamento entre ícone e texto */
+    }
+    
+    .formacao__nome {
+        font-size: 1.2rem;
+        color: #f4f4f4;
+        margin: 0;
+    }
+    
+    .formacao__detalhe {
+        font-size: 1rem;
+        color: #ccc;
+        margin: 5px 0 0 0;
+    }
+    /************************* SOBRE MIM**************************/
+    
+    #sobre-mim {
+        margin: 30px 0;
+    }
+    
+    #sobre-mim h2 {
+        margin-top: 70PX;
+        margin-bottom: 20px;
+    }
+    
+    #sobre-mim p {
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    /************************* FORM**************************/
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form label,
+    form input,
+    form textarea,
+    form button {
+        margin: 10px 0;
+    }
+    
+    form input,
+    form textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    
+    form button {
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        border: none;
+    }
+    
+    footer {
+        background-color: #6a0dad;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        z-index: 1000;
+        /* Garante que o footer fique acima de outros elementos */
+        font-family: 'Arial', sans-serif;
+        /* Fonte do footer */
+    }
+    
+    footer p {
+        margin: 0;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        /* Ajuste de espaçamento entre letras */
+    }
+    /* Estilo para telas pequenas, como celulares */
+    /* ####################################Telas pequenas (smartphones) #######################################*/
+    
+    @media (max-width: 600px) {
+        header,
+        nav,
+        section {
+            padding: 10px;
+        }
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .main-container {
+            padding-top: 60px;
+            /* Ajustar espaço para o header fixo */
+        }
+        section {
+            height: auto;
+            padding: 15px;
+        }
+        .foto-container,
+        .frase-container {
+            margin-bottom: 15px;
+        }
+        .minha-foto {
+            width: 10rem;
+            height: auto;
+        }
+        .frase {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+        }
+        .habilidades__lista {
+            flex-direction: column;
+            gap: 5px;
+        }
+        .habilidades__elemento {
+            width: auto;
+            padding: 5px;
+        }
+        .habilidades__icone {
+            width: 30px;
+        }
+        .habilidades__nome {
+            font-size: 0.75rem;
+        }
+    }
+    /*###########################################Telas médias (tablets) #################################################################*/
+    
+    @media (min-width: 601px) and (max-width: 1024px) {
+        nav ul {
+            flex-direction: row;
+            gap: 10px;
+        }
+        .habilidades__lista {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .habilidades__elemento {
+            width: 100px;
+            padding: 10px;
+        }
+    }
